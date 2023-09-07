@@ -1,0 +1,146 @@
+@use 'variables' as var;
+@use 'resets' as *;
+@use 'mixins' as *;
+
+body {
+    @include flexCenter(row);
+    background-color: map-get(var.$clr ,neutral-900);
+    padding: 0 1.6rem;
+}
+
+.age-calculator {
+    @include maxWidth(84rem);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6.35rem;
+    background-color: map-get(var.$clr, neutral-1000);
+    padding: 4.8rem 2.4rem;
+    border-radius: 2.4rem 2.4rem 10rem 2.4rem;
+
+    @include minScreenSize(var.$brakepoint-screen-size-desktop) {
+        padding: 5.6rem;
+    }
+
+    &__form {
+        width: 100%;
+        position: relative;
+        @include flexCenter(row);
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: min(1.6rem, 4.3vw);
+        padding-bottom: 6.35rem;
+        border-bottom: .1rem solid map-get(var.$clr, neutral-800);
+
+        @include minScreenSize(var.$brakepoint-screen-size-desktop) {
+            gap: 3.2rem;
+        }
+    }
+
+    &__result-field {
+        @include fontProp(map-get(var.$clr, neutral-100), min(map-get(var.$fs, fs-xl), 15vw), var.$fw-extra-bold, 6.16rem, -.112rem);
+        font-style: italic;
+
+        @include minScreenSize(var.$brakepoint-screen-size-desktop) {
+            font-size: map-get(var.$fs, fs-xxl);
+            letter-spacing: -.208rem;
+            line-height: 11.44rem;
+        }
+    }
+}
+
+.result {
+    &__value {
+        color: map-get(var.$clr, accent-500);
+    }
+}
+
+.submit-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    width: 6.4rem;
+    height: 6.4rem;
+    background-color: map-get(var.$clr, accent-500);
+    background-image: url("../assets/images/icon-arrow.svg");
+    background-size: 2.4rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @include minScreenSize(var.$brakepoint-screen-size-desktop) {
+        width: 9.6rem;
+        height: 9.6rem;
+        background-size: 4.4rem;
+        left: 100%;
+        transform: translateX(-100%) translateY(50%);
+    }
+
+    &:hover{
+        transition-duration: .4s;
+        background-color: map-get(var.$clr, neutral-100);
+    }
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+
+    &__label {
+        @include fontProp(map-get(var.$clr, neutral-400), map-get(var.$fs, fs-xs), var.$fw-bold, normal, .3rem);
+        text-transform: uppercase;
+        
+        @include minScreenSize(var.$brakepoint-screen-size-desktop) {
+            font-size: map-get(var.$fs, fs-s);
+            letter-spacing: .035rem;
+        }
+    }
+
+    &__field {
+        @include maxWidth(16rem);
+        padding: 1.2rem 1.6rem;
+        border: .1rem solid map-get(var.$clr , neutral-800);
+        border-radius: .8rem;
+        @include fontProp(map-get(var.$clr, neutral-100), min(map-get(var.$fs, fs-m), 5.5vw), var.$fw-bold, normal, .02rem);
+        
+        @include maxScreenSize(var.$brakepoint-screen-size-mobile) {
+            padding: .5rem;
+        }
+
+        @include minScreenSize(var.$brakepoint-screen-size-desktop) {
+            padding: 1.2rem 2.4rem;
+            font-size: map-get(var.$fs, fs-l);
+            letter-spacing: .032rem;
+            
+        }
+
+        &:focus {
+            border-color: map-get(var.$clr , accent-500);
+            outline: none;
+        }
+    }
+
+}
+
+.error-state {
+    @include fontProp(map-get(var.$clr, accent-400), map-get(var.$fs, fs-xs), var.$fw-regular, normal, initial);
+    font-style: italic;
+    @include minScreenSize(var.$brakepoint-screen-size-desktop) {
+        font-size: map-get(var.$fs, fs-s);
+    } 
+
+    .input__label {
+        color: map-get(var.$clr, accent-400);
+    }
+
+    .input__field {
+        border-color: map-get(var.$clr, accent-400);
+    }
+}
+
+

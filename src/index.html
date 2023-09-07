@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Frontend Mentor | Age calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <main class="age-calculator">
+
+    <form id="age-calculator-form" class="age-calculator__form" action="submit" method="post">
+      <section class="input day" id="day">
+        <label class="input__label" for="day">Day</label>
+        <input class="input__field" type="text" id="day-input-field" name="day" required placeholder="DD">
+        <span id="day-error-box" class="error-box"></span>
+      </section>
+      
+      <section class="input month" id="month">
+        <label class="input__label" for="month">Month</label>
+        <input class="input__field" type="text" id="month-input-field" name="month" required placeholder="MM">
+        <span id="month-error-box" class="error-box"></span>
+      </section>
+      
+      <section class="input year" id="year">
+        <label class="input__label" for="year">Year</label>
+        <input class="input__field" type="text" id="year-input-field" name="year" required placeholder="YYYY">
+        <span id="year-error-box" class="error-box"></span>
+      </section>
+    
+      <input id="subBtn" class="submit-btn" type="button" value="">
+    </form>
+
+    <div class="age-calculator__result-field">
+      <p class="result"><span class="result__value" id="year-value">- -</span> years</p>
+      <p class="result"><span class="result__value" id="month-value">- -</span> months</p>
+      <p class="result"><span class="result__value" id="day-value">- -</span> days</p>
+    </div>
+  </main>
+<script src="main.js"></script>
+</body>
+</html>

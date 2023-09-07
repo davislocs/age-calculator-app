@@ -1,0 +1,31 @@
+//font colors
+$clr: (
+    "accent-500": hsla(259, 100%, 65%, 1),
+    "accent-400": hsla(0, 100%, 67%, 1),
+
+    "neutral-1000": hsla(0, 0%, 100%, 1),
+    "neutral-900": hsla(0, 0%, 94%, 1),
+    "neutral-800": hsla(0, 0%, 86%, 1),
+    "neutral-400": hsla(0, 1%, 44%, 1),
+    "neutral-100": hsla(0, 0%, 8%, 1)
+);
+//font sizes
+$fs: (
+    "fs-xs": 1.2rem,
+    "fs-s": 1.4rem,
+    "fs-m": 2rem,
+    "fs-l": 3.2rem,
+    "fs-xl": 5.6rem,
+    "fs-xxl": 10.4rem
+);
+
+//Screen break points//
+$brakepoint-screen-size-desktop: 700px; 
+$brakepoint-screen-size-mobile: 374px;
+
+//font weights
+$fw-regular: 400;
+$fw-bold: 700;
+$fw-extra-bold: 800;
+
+$ff-primary: "Poppins", "sans-serif";

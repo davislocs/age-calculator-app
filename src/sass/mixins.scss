@@ -1,0 +1,32 @@
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin maxWidth($width) {
+    width: 100%;
+    max-width: $width;
+}
+
+@mixin fontProp ($c, $fs, $fw, $lh, $ls) {
+    color: $c;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    letter-spacing: $ls;
+}
+
+@mixin minScreenSize($width) {
+    @media (min-width: $width){
+        @content;
+    }
+}
+
+@mixin maxScreenSize($width) {
+    @media (max-width: $width){
+        @content;
+    }
+}
